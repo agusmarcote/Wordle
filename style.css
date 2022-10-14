@@ -1,0 +1,13 @@
+
+.container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+
+}
+
+.firstLetter {
+    display: flex;
+    width: 58px;
+    height: 58px
+}
