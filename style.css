@@ -1,4 +1,4 @@
-
+/*
 .container {
     display: flex;
     flex-flow: row nowrap;
@@ -6,8 +6,161 @@
 
 }
 
-.firstLetter {
+.firstTry {
     display: flex;
     width: 58px;
-    height: 58px
+    height: 58px;
+}
+
+.firstTry td {
+    display: flex;
+    width: 200px;
+    height: 200px;
+}
+*/
+
+
+*{
+    background-color: rgba(26, 190, 250, 0);
+    font-family: 'Roboto', sans-serif;
+} 
+
+.header {
+    text-align: center;
+    font-size: 70px;
+    color:rgba(188, 198, 204, 1);
+    font-weight: lighter;
+}
+
+.easy {
+    display: flex;
+    flex-flow: wrap;
+    margin-right: 100px;
+    margin-left: 350px;
+    font-size: 45px;
+}
+
+p{
+    font-size: 40px;
+    font-style: italic;
+}
+
+.rules {
+    display: flex;
+    font-size: 25px;
+    height: 200px;
+}
+
+.buttonp{
+    display: flex;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.letsplay {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 400px;
+    height: 70px;
+    border-radius: 5px;
+    border-color: rgba(188, 198, 204);
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    background-color: rgba(188, 198, 204);
+}
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.game {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    z-index: 10;
+}
+
+.tries {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-self: center;
+    height: 100px;
+    padding-top: 900px;
+    box-sizing: content-box;
+    padding: 10px;
+    flex-grow: 0;
+}
+
+.tries div {
+    display: flex;
+    height: 80px;
+    width: 75px;
+    padding: 5px;
+    margin: 10px;
+    border-style: solid;
+    border-color: rgba(188, 198, 204, 0.8);
+    border-radius: 5px;
+    flex-grow: 0;
+    background-color: rgba(188, 198, 204, 0.8);
+}
+
+.submit{
+    display: flex;
+    flex-direction: column;
+    height: 20vh;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 400px;
+    height: 70px;
+    border-radius: 5px;
+    border-color: rgba(188, 198, 204);
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    background-color: rgba(188, 198, 204);
+}
+
+.hidden {
+    display: none;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 5;
+}
+
+input {
+    display: flex;
+    width: 65px;
+    height: 72px;
+    font-size: 50px;
+    border-style: none;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+input:focus {
+    outline: none !important;
+    caret-color: transparent;
 }

@@ -1,33 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="stylesheet" href="style.css" />
-        <title>Wordle</title>
-    </head>
-    <body>
-        <h1>Wordle</h1>
-        <div class="container">
-            <tbody>
-                <tr class="firstTry">
-                    <td class="firstLetter">
-                        <input style="height: 200px;" type="text" minlength="1" maxlength="1" />
-                    </td>
-                    <td class="secondLetter">
-                        <input type="text" minlength="1" maxlength="1" />
-                    </td>
-                    <td class="thirdLetter">
-                        <input type="text" minlength="1" maxlength="1" />
-                    </td>
-                    <td class="fourthLetter">
-                        <input type="text" minlength="1" maxlength="1" />
-                    </td>
-                    <td class="fifthLetter">
-                        <input type="text" minlength="1" maxlength="1" />
-                </td>
-            </tr>
-        </tbody>
-        </div>
-    </body>
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width" />
+            <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="style.css" />
+            <title>Wordle</title>
+        </head>
+        <section class="header">
+            <h1>Wordle</h1>
+                <p class="easy">Easy peasy... you need to guess the five letter word. Here are the basic rules...</p>
+                    <div class="rules">
+                        <p style="color: gray;">If the background of the letter is gray, that letter is not on the word</p>
+                        <p style="color: rgb(255, 255,51);">If the background of the letter is yellow, that letter is misplaced</p>
+                        <p style="color: red;">If the background of the letter is red, that letter is on the correct position</p>
+                    </div>
+                <p>Ohh... and you only have 6 tries</p>
+                <div class="buttonp">
+                    <button class="letsplay">lets play...</button>
+                </div>
+        </section>
+        <section class="game hidden">
+            <div class="tries">
+                <div><input class="guess" type="text" maxlength="1"/></div>
+                <div><input  type="text" maxlength="1"/></div>
+                <div><input  type="text" maxlength="1"/></div>
+                <div><input  type="text" maxlength="1"/></div>
+                <div><input  type="text" maxlength="1"/></div>
+            </div>
+            <div class="tries">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="tries">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="tries">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="tries">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="tries">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </section>
+        <section class="submit hidden">
+                <button class="button">Enviar</button>
+        </section>
+        <div class="overlay hidden"></div>
+    <script src="index.js"></script>
+
 </html>
