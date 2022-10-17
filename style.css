@@ -164,3 +164,15 @@ input:focus {
     outline: none !important;
     caret-color: transparent;
 }
+
+.gray {
+    background-color: gray !important;
+}
+
+.yellow {
+    background-color: yellow !important;
+}
+
+.green {
+    background-color: green !important; 
+}

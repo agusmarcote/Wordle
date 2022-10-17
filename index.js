@@ -1,5 +1,5 @@
 
-const words = ["Abuse",
+const word = ["Abuse",
     "Adult",
     "Agent",
     "Anger",
@@ -450,38 +450,59 @@ const words = ["Abuse",
     "Hella",
     "Hello",
 ]
+const words = word.map(element => {
+    return element.toLowerCase()
+})
 
-
-const game = document.querySelector(".game")
+const game = document.querySelectorAll(".game")
 const overlay = document.querySelector(".overlay")
 const buttonp = document.querySelector(".buttonp")
 const submit = document.querySelector(".submit")
 const header = document.querySelector(".header")
-const guess = document.getElementsByClassName(".guess")
+const guess = document.querySelectorAll(".tries input")
+const pruebas = document.querySelectorAll(".tries div")
+const tries = document.querySelectorAll(".tries")
 
-
-
-/*
 let secretWord = words[Math.floor(Math.random() * words.length)]
-console.log(secretWord)
 let swChar = Array.from(secretWord)
+
+console.log(secretWord)
 console.log(swChar)
-*/
+
 
 const openGame = () => {
     game.classList.remove("hidden")
     overlay.classList.add("hidden")
     submit.classList.remove("hidden")
     header.classList.add("hidden")
-    let secretWord = words[Math.floor(Math.random() * words.length)]
-    console.log(secretWord)
-    let swChar = Array.from(secretWord)
-    console.log(swChar)
-
 }
 
+
+
+
 submit.addEventListener("click", () => {
-    console.log(guess.value)
+    let guessWord = []
+    
+
+    guess.forEach(el => {
+        guessWord.push(el.value)
+     })
+
+     console.log(guessWord)
+      
+     for (let i = 0; i < 5; i++){
+         if (guessWord[i] === swChar[i]){
+
+            pruebas[i].classList.add("green")
+         } else if (swChar.includes(guessWord[i])){
+
+            pruebas[i].classList.add("yellow")
+         } else {
+
+             pruebas[i].classList.add("gray")
+         }
+     } 
+
 })
 
 
