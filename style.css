@@ -23,6 +23,10 @@
 *{
     background-color: rgba(26, 190, 250, 0);
     font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    color: white;
+    /* font-style: yellow; */
+    /* -webkit-text-stroke: 0.1px white; */
 } 
 
 .header {
@@ -30,7 +34,29 @@
     font-size: 70px;
     color:rgba(188, 198, 204, 1);
     font-weight: lighter;
+    background-image:linear-gradient(
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+      ), url("../imagen/custom-library.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
 }
+
+.background{
+    background-image:linear-gradient(
+        rgba(0, 0, 0, 0.1),
+        rgba(0, 0, 0, 0.1)
+      ), url("../imagen/custom-library.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+} 
+
+h1{
+    margin: 0;
+}
+
 
 .easy {
     display: flex;
@@ -43,6 +69,7 @@
 p{
     font-size: 40px;
     font-style: italic;
+    /* filter: invert(1) grayscale(1) contrast(9) */
 }
 
 .rules {
@@ -66,12 +93,14 @@ p{
     align-items: center;
     width: 400px;
     height: 70px;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     border-color: rgba(188, 198, 204);
-    font-size: 20px;
+    border-style: none;
+    font-size: 50px;
     font-weight: bold;
     font-style: italic;
-    background-color: rgba(188, 198, 204);
+    background-color: rgba(188, 198, 204, 0.0);
+    cursor: pointer;
 }
 
 h2 {
@@ -83,7 +112,7 @@ h2 {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    z-index: 10;
+    z-index: 7;
 }
 
 .tries {
@@ -105,10 +134,10 @@ h2 {
     padding: 5px;
     margin: 10px;
     border-style: solid;
-    border-color: rgba(188, 198, 204, 0.8);
+    border-color: black(188, 198, 204, 0.8);
     border-radius: 5px;
     flex-grow: 0;
-    background-color: rgba(188, 198, 204, 0.8);
+    background-color: rgba(188, 198, 204, 0.0);
 }
 
 .submit{
@@ -129,14 +158,16 @@ h2 {
     height: 70px;
     border-radius: 5px;
     border-color: rgba(188, 198, 204);
-    font-size: 20px;
+    border-style: none;
+    font-size: 50px;
     font-weight: bold;
     font-style: italic;
-    background-color: rgba(188, 198, 204);
+    background-color: rgba(188, 198, 204, 0.0);
+    cursor: pointer;
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .overlay{
@@ -175,4 +206,22 @@ input:focus {
 
 .green {
     background-color: green !important; 
+}
+
+.victory {
+    background-color: rgb(250, 181, 6);
+    background-image: url("../imagen/messi\ apuntandote.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    z-index: 10;
+}
+
+.defeat {
+    background-color: red;
+    background-image: url("../imagen/Messi\ llorando.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    z-index: 10;
 }

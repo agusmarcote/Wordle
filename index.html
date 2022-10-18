@@ -7,74 +7,78 @@
             <link rel="stylesheet" href="style.css" />
             <title>Wordle</title>
         </head>
-        <section class="header">
-            <h1>Wordle</h1>
-                <p class="easy">Easy peasy... you need to guess the five letter word. Here are the basic rules...</p>
-                    <div class="rules">
-                        <p style="color: gray;">If the background of the letter is gray, that letter is not on the word</p>
-                        <p style="color: rgb(255, 255,51);">If the background of the letter is yellow, that letter is misplaced</p>
-                        <p style="color: red;">If the background of the letter is red, that letter is on the correct position</p>
-                    </div>
-                <p>Ohh... and you only have 6 tries</p>
-                <div class="buttonp">
-                    <button class="letsplay">lets play...</button>
-                </div>
-        </section>
-        <section class="game hidden">
-            <div class="tries">
-                <div><input  type="text" maxlength="1"/></div>
-                <div><input  type="text" maxlength="1"/></div>
-                <div><input  type="text" maxlength="1"/></div>
-                <div><input  type="text" maxlength="1"/></div>
-                <div><input  type="text" maxlength="1"/></div>
+            <body>
+                <section class="header">
+                    <h1>Wordle</h1>
+                        <p class="easy">Easy peasy... you need to guess the five letter word. Here are the basic rules...</p>
+                            <div class="rules">
+                                <p>If the background of the letter is <span style="color: green; background-color: BLACK;"> GREEN </span>, that letter is on the correct position</p>
+                                <p>If the background of the letter is <span style="color: gray; background-color: BLACK;"> GRAY </span>, that letter is not on the word</p>
+                                <p>If the background of the letter is <span style="color: yellow; background-color: BLACK;"> YELLOW </span>, that letter is misplaced</p>
+                            </div>
+                        <p>Ohh... and you only have 6 tries</p>
+                        <div class="buttonp">
+                            <button class="letsplay">lets play...</button>
+                        </div>
+                </section>
+                <div class="background hidden">
+                    <section class="game hidden">
+                        <div class="tries">
+                            <div><input  type="text" maxlength="1"/></div>
+                            <div><input  type="text" maxlength="1"/></div>
+                            <div><input  type="text" maxlength="1"/></div>
+                            <div><input  type="text" maxlength="1"/></div>
+                            <div><input  type="text" maxlength="1"/></div>
                 
-                    <!-- <div><input type="text" maxlength="1"></div>
-                    <div><input type="text" maxlength="1"></div>
-                    <div><input type="text" maxlength="1"></div>
-                    <div><input type="text" maxlength="1"></div>
-                    <div><input type="text" maxlength="1"></div> -->
+                            <!-- <div><input type="text" maxlength="1"></div>
+                            <div><input type="text" maxlength="1"></div>
+                            <div><input type="text" maxlength="1"></div>
+                            <div><input type="text" maxlength="1"></div>
+                            <div><input type="text" maxlength="1"></div> -->
            
+                        </div>
+                        <div class="tries hidden">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="tries hidden">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="tries hidden">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="tries hidden">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                         <div></div>
+                        </div>
+                        <div class="tries hidden">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </section>
+                    <section class="submit hidden">
+                        <button class="button">SUBMIT</button>
+                    </section>
+                <div class="overlay hidden"></div>
             </div>
-            <div class="tries">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div class="tries">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div class="tries">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div class="tries">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div class="tries">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </section>
-        <section class="submit hidden">
-                <button class="button">Enviar</button>
-        </section>
-        <div class="overlay hidden"></div>
+            </body>
     <script src="index.js"></script>
     
 </html>

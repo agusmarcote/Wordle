@@ -454,20 +454,32 @@ const words = word.map(element => {
     return element.toLowerCase()
 })
 
-const game = document.querySelectorAll(".game")
+//  const charArray = word.map(el => {
+//      return el.split('')
+//  })
+const charArray = word.map(el => {
+    return word.join('')
+})
+//  console.log(charArray)
+let trie = 0
+
+const game = document.querySelector(".game")
 const overlay = document.querySelector(".overlay")
 const buttonp = document.querySelector(".buttonp")
 const submit = document.querySelector(".submit")
 const header = document.querySelector(".header")
-const guess = document.querySelectorAll(".tries input")
-const pruebas = document.querySelectorAll(".tries div")
 const tries = document.querySelectorAll(".tries")
+const body = document.querySelector("body")
+const background = document.querySelector(".background")
+
 
 let secretWord = words[Math.floor(Math.random() * words.length)]
 let swChar = Array.from(secretWord)
+ console.log(secretWord)
+// console.log(swChar)
 
-console.log(secretWord)
-console.log(swChar)
+//crear funcion para rellenar input 
+
 
 
 const openGame = () => {
@@ -475,36 +487,74 @@ const openGame = () => {
     overlay.classList.add("hidden")
     submit.classList.remove("hidden")
     header.classList.add("hidden")
+    background.classList.remove("hidden")
 }
-
 
 
 
 submit.addEventListener("click", () => {
     let guessWord = []
+    let correct = true
+    const guess = tries[trie].querySelectorAll("input")
+    const pruebas = tries[trie].querySelectorAll("div")
     
 
-    guess.forEach(el => {
+    guess.forEach(el => {                    // guess word
         guessWord.push(el.value)
      })
 
-     console.log(guessWord)
-      
-     for (let i = 0; i < 5; i++){
-         if (guessWord[i] === swChar[i]){
 
+    let completeGuess = guessWord.join('')
+    // console.log(guessWord.join(''))
+    // console.log(guessWord)
+    console.log(completeGuess)
+
+    if (completeGuess.length < 5 || !words.includes(completeGuess)){       // cannot click less than 5 words nor words that arrent on the array
+        return
+    }
+    
+    
+    for (let i = 0; i < 5; i++){           // change box color
+        if (guessWord[i] === swChar[i]){
             pruebas[i].classList.add("green")
          } else if (swChar.includes(guessWord[i])){
-
             pruebas[i].classList.add("yellow")
+            correct = false
          } else {
+            pruebas[i].classList.add("gray")
+            correct = false
+        }
+    } 
+    if (correct){
+        body.classList.add("victory")
+        submit.classList.add("hidden")
+        background.classList.add("hidden")
+    } else {
+        trie++
+        const divs = tries[trie].querySelectorAll("div")
+        divs.forEach((div) => {
+            div.innerHTML = '<input  type="text" maxlength="1"/>'
+        })
+        tries[trie].classList.remove("hidden")
+    }
 
-             pruebas[i].classList.add("gray")
-         }
-     } 
+    console.log(trie)
+
+     if (trie === 5){
+        body.classList.add("defeat")
+        background.classList.add("hidden")
+
+     }
+
 
 })
 
+// const endGame = () => {
+//     if (trie = 6){
+//         body.classList.add("defeat")    
+//     }
+// }
+// console.log(trie)
 
 buttonp.addEventListener("click", () => {
     openGame()
