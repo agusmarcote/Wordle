@@ -540,7 +540,6 @@ document.addEventListener("keyup", (e) => {
     else if (e.target.parentElement.nextElementSibling) {
          e.target.parentElement.nextElementSibling.lastChild.focus()
     }
-    console.log(e)
 })
 
 
@@ -560,11 +559,9 @@ const updateGame = () => {
     
     
         let completeGuess = guessWord.join('')
-        // console.log(guessWord.join(''))
-        // console.log(guessWord)
         console.log(completeGuess)
     
-        if (completeGuess.length < 5 || !words.includes(completeGuess)){       // cannot click less than 5 words nor words that arrent on the array
+        if (completeGuess.length < 5 || !words.includes(completeGuess)){ // cannot click less than 5 L nor words that arrent on the array
             return
         }
         
@@ -585,7 +582,7 @@ const updateGame = () => {
             }
         } 
         if (correct){
-            // body.classList.add("victory")
+            body.classList.add("victory")
             submit.classList.add("hidden")
             background.classList.add("hidden")
         } else {

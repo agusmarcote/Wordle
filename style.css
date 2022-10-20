@@ -37,7 +37,7 @@
     background-image:linear-gradient(
         rgba(0, 0, 0, 0.3),
         rgba(0, 0, 0, 0.3)
-      ), url("../imagen/custom-library.webp");
+      ), url("custom-library.webp");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -47,7 +47,7 @@
     background-image:linear-gradient(
         rgba(0, 0, 0, 0.1),
         rgba(0, 0, 0, 0.1)
-      ), url("../imagen/custom-library.webp");
+      ), url("custom-library.webp");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -229,7 +229,7 @@ input:focus {
     display: flex;
     flex-direction: column;
     background-color: rgb(250, 181, 6);
-    background-image: url("../imagen/messi\ apuntandote.jpg");
+    background-image: url("messi\ apuntandote.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -238,7 +238,7 @@ input:focus {
 
 .defeat {
     background-color: red;
-    background-image: url("../imagen/Messi\ llorando.jpg");
+    background-image: url("Messi\ llorando.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
