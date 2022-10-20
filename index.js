@@ -463,6 +463,7 @@ const charArray = word.map(el => {
 //  console.log(charArray)
 let trie = 0
 
+
 const game = document.querySelector(".game")
 const overlay = document.querySelector(".overlay")
 const buttonp = document.querySelector(".buttonp")
@@ -471,7 +472,9 @@ const header = document.querySelector(".header")
 const tries = document.querySelectorAll(".tries")
 const body = document.querySelector("body")
 const background = document.querySelector(".background")
+const letter = document.querySelector(".usedLetter")
 
+//tries[0].querySelector("input").focus()
 
 let secretWord = words[Math.floor(Math.random() * words.length)]
 let swChar = Array.from(secretWord)
@@ -482,72 +485,127 @@ let swChar = Array.from(secretWord)
 
 
 
+
 const openGame = () => {
     game.classList.remove("hidden")
-    overlay.classList.add("hidden")
+    // overlay.classList.add("hidden")
     submit.classList.remove("hidden")
     header.classList.add("hidden")
     background.classList.remove("hidden")
+    tries[0].querySelector("input").focus()
+
 }
 
+// const onlyLetter = function a(event){
+//     var char = event.which;
+//     if(char > 31 && char != 32 && (char < 65 || char > 90) && (char < 97 || char > 122)) {
+//         return false
+//     }
+//     console.log(onlyLetter)
+// }
 
+// document.addEventListener("keyup", (e) => {
+//     //   const guess = tries[trie].querySelectorAll("input")
+//     //    if (e.length == 1)
+//     let char = e.keyCode
+//     if (char > 31 && char != 32 && (char < 65 || char > 90) && (char < 97 || char > 122)) {
+//         if (e.target.parentElement.nextElementSibling) {
+//             e.target.parentElement.nextElementSibling.lastChild.focus() 
+//             e.target.parentElement.nextElementSibling.lastChild.value = " "
+//         }
+//         e.target.value = e.key
+//     }
+    
+//     //  }
+//     // const inputs = tries[trie].querySelectorAll("input")
+//     console.log(e)
+    
+
+//  })
+
+document.addEventListener("keyup", (e) => {
+    if (e.target.parentElement.nextElementSibling) {
+         e.target.parentElement.nextElementSibling.lastChild.focus()
+    }
+})
+
+
+let lettersUsed = []
+
+const updateGame = () => {
+        let guessWord = []
+       
+        let correct = true
+        const guess = tries[trie].querySelectorAll("input")
+        const pruebas = tries[trie].querySelectorAll("div")
+    
+    
+        guess.forEach(el => {                    // guess word
+            guessWord.push(el.value)
+         })
+    
+    
+        let completeGuess = guessWord.join('')
+        // console.log(guessWord.join(''))
+        // console.log(guessWord)
+        console.log(completeGuess)
+    
+        if (completeGuess.length < 5 || !words.includes(completeGuess)){       // cannot click less than 5 words nor words that arrent on the array
+            return
+        }
+        
+        
+        for (let i = 0; i < 5; i++){           // change box color
+            if (guessWord[i] === swChar[i]){
+                pruebas[i].classList.add("green")
+             } else if (swChar.includes(guessWord[i])){
+                pruebas[i].classList.add("yellow")
+                correct = false
+             } else {
+                pruebas[i].classList.add("gray")
+                correct = false
+                console.log(lettersUsed.includes(guessWord[i]))
+                if(!lettersUsed.includes(guessWord[i])){
+                    lettersUsed.push(guessWord[i])
+                }
+            }
+        } 
+        if (correct){
+            body.classList.add("victory")
+            submit.classList.add("hidden")
+            background.classList.add("hidden")
+        } else {
+            trie++
+            const divs = tries[trie].querySelectorAll("div")
+            divs.forEach((div) => {
+                div.innerHTML = '<input  type="text" maxlength="1"/>'
+            })
+            tries[trie].classList.remove("hidden")
+        }
+    
+        console.log(trie)
+    
+         if (trie === 5){
+            body.classList.add("defeat")
+            background.classList.add("hidden")
+    
+         }
+    
+         console.log(lettersUsed)
+         letter.innerHTML = lettersUsed
+}
 
 submit.addEventListener("click", () => {
-    let guessWord = []
-    let correct = true
-    const guess = tries[trie].querySelectorAll("input")
-    const pruebas = tries[trie].querySelectorAll("div")
-    
+    updateGame()
+})
 
-    guess.forEach(el => {                    // guess word
-        guessWord.push(el.value)
-     })
-
-
-    let completeGuess = guessWord.join('')
-    // console.log(guessWord.join(''))
-    // console.log(guessWord)
-    console.log(completeGuess)
-
-    if (completeGuess.length < 5 || !words.includes(completeGuess)){       // cannot click less than 5 words nor words that arrent on the array
-        return
+document.addEventListener("keyup", (e) => {
+    if (e.keyCode === 13){
+        updateGame()
     }
-    
-    
-    for (let i = 0; i < 5; i++){           // change box color
-        if (guessWord[i] === swChar[i]){
-            pruebas[i].classList.add("green")
-         } else if (swChar.includes(guessWord[i])){
-            pruebas[i].classList.add("yellow")
-            correct = false
-         } else {
-            pruebas[i].classList.add("gray")
-            correct = false
-        }
-    } 
-    if (correct){
-        body.classList.add("victory")
-        submit.classList.add("hidden")
-        background.classList.add("hidden")
-    } else {
-        trie++
-        const divs = tries[trie].querySelectorAll("div")
-        divs.forEach((div) => {
-            div.innerHTML = '<input  type="text" maxlength="1"/>'
-        })
-        tries[trie].classList.remove("hidden")
-    }
-
-    console.log(trie)
-
-     if (trie === 5){
-        body.classList.add("defeat")
-        background.classList.add("hidden")
-
-     }
-
 
 })
+
 
 // const endGame = () => {
 //     if (trie = 6){
@@ -559,3 +617,4 @@ submit.addEventListener("click", () => {
 buttonp.addEventListener("click", () => {
     openGame()
 })
+

@@ -69,7 +69,7 @@ h1{
 p{
     font-size: 40px;
     font-style: italic;
-    /* filter: invert(1) grayscale(1) contrast(9) */
+    /* filter: invert(1) grayscale(1) contrast(9)  */
 }
 
 .rules {
@@ -103,9 +103,25 @@ p{
     cursor: pointer;
 }
 
-h2 {
-    text-align: center;
-    font-size: 30px;
+.usedL{
+    display: flex;
+    background-color: rgb(131, 143, 122);
+    height: 50px;
+}
+
+.usedLetter{
+    display: flex;
+    height: 50px;
+    width: 900px;
+    font-size: 50px;
+    color: black;
+    justify-content: center;
+}
+
+h2{
+    font-size: 40px;
+    width: 300px;
+    margin: 0px !important;
 }
 
 .game {
@@ -170,7 +186,7 @@ h2 {
     display: none !important;
 }
 
-.overlay{
+/* .overlay{
     position: absolute;
     top: 0;
     left: 0;
@@ -179,7 +195,7 @@ h2 {
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(3px);
     z-index: 5;
-}
+} */
 
 input {
     display: flex;
@@ -208,14 +224,16 @@ input:focus {
     background-color: green !important; 
 }
 
-.victory {
+  .victory {
+    display: flex;
+    flex-direction: column;
     background-color: rgb(250, 181, 6);
     background-image: url("../imagen/messi\ apuntandote.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    z-index: 10;
-}
+    z-index: 30;
+}  
 
 .defeat {
     background-color: red;
@@ -225,3 +243,4 @@ input:focus {
     height: 100vh;
     z-index: 10;
 }
+
