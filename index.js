@@ -523,10 +523,24 @@ const openGame = () => {
 
 //  })
 
+// document.addEventListener("keydown", (e) => {
+//     console.log(e)
+// })
+
+// document.addEventListener("keyup", (e) => {
+//     if (e.keyCode == 8){
+//         e.target.parentElement.previousElementSibling.lastChild.focus()
+//     }
+// })
+
 document.addEventListener("keyup", (e) => {
-    if (e.target.parentElement.nextElementSibling) {
+    if (e.keyCode == 8){
+         e.target.parentElement.previousElementSibling.lastChild.focus()
+     }
+    else if (e.target.parentElement.nextElementSibling) {
          e.target.parentElement.nextElementSibling.lastChild.focus()
     }
+    console.log(e)
 })
 
 
@@ -571,7 +585,7 @@ const updateGame = () => {
             }
         } 
         if (correct){
-            body.classList.add("victory")
+            // body.classList.add("victory")
             submit.classList.add("hidden")
             background.classList.add("hidden")
         } else {
@@ -580,7 +594,8 @@ const updateGame = () => {
             divs.forEach((div) => {
                 div.innerHTML = '<input  type="text" maxlength="1"/>'
             })
-            tries[trie].classList.remove("hidden")
+            tries[trie].classList.remove("hidden") 
+            divs[0].firstChild.focus()
         }
     
         console.log(trie)

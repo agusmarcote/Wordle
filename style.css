@@ -103,11 +103,11 @@ p{
     cursor: pointer;
 }
 
-.usedL{
+/* .usedL{
     display: flex;
     background-color: rgb(131, 143, 122);
     height: 50px;
-}
+} */
 
 .usedLetter{
     display: flex;
@@ -116,6 +116,7 @@ p{
     font-size: 50px;
     color: black;
     justify-content: center;
+    background-color: rgb(131, 143, 122);
 }
 
 h2{
