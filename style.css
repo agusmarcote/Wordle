@@ -22,7 +22,7 @@
 
 *{
     background-color: rgba(26, 190, 250, 0);
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Abhaya Libre', serif;
     font-weight: bolder;
     color: white;
     /* font-style: yellow; */
@@ -68,7 +68,7 @@ h1{
 
 p{
     font-size: 40px;
-    font-style: italic;
+    /* font-style: italic; */
     /* filter: invert(1) grayscale(1) contrast(9)  */
 }
 
@@ -109,11 +109,10 @@ p{
     height: 50px;
     width: 535px;
     font-size: 50px;
-    color: black;
     justify-content: center;
     align-items: center;
     align-self: center;
-    background-color: rgb(131, 143, 122);
+    background-color: rgb(131, 143, 122. 0.3);
 }
 
 h2{
