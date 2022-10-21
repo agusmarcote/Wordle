@@ -4,6 +4,8 @@
 
 Developed for Browsers ONLY
 
+For ultimate experience put the zoom at 67%
+
 Developed to relax and play... while using your brain and knowledge
 
 # Introduction
