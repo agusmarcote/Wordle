@@ -7,6 +7,7 @@ const word = ["Abuse",
     "Award",
     "Basis",
     "Beach",
+    "Began",
     "Birth",
     "Block",
     "Blood",
@@ -167,6 +168,7 @@ const word = ["Abuse",
     "Spite",
     "Sport",
     "Squad",
+    "Stack",
     "Staff",
     "Stage",
     "Start",
@@ -458,13 +460,11 @@ const words = word.map(element => {
     return element.toLowerCase()
 })
 
-//  const charArray = word.map(el => {
-//      return el.split('')
-//  })
+
 const charArray = word.map(el => {
     return word.join('')
 })
-//  console.log(charArray)
+
 let trie = 0
 
 
@@ -478,14 +478,12 @@ const body = document.querySelector("body")
 const background = document.querySelector(".background")
 const letter = document.querySelector(".usedLetter")
 
-//tries[0].querySelector("input").focus()
+
 
 let secretWord = words[Math.floor(Math.random() * words.length)]
 let swChar = Array.from(secretWord)
  console.log(secretWord)
-// console.log(swChar)
 
-//crear funcion para rellenar input 
 
 
 
@@ -499,43 +497,6 @@ const openGame = () => {
     tries[0].querySelector("input").focus()
 
 }
-
-// const onlyLetter = function a(event){
-//     var char = event.which;
-//     if(char > 31 && char != 32 && (char < 65 || char > 90) && (char < 97 || char > 122)) {
-//         return false
-//     }
-//     console.log(onlyLetter)
-// }
-
-// document.addEventListener("keyup", (e) => {
-//     //   const guess = tries[trie].querySelectorAll("input")
-//     //    if (e.length == 1)
-//     let char = e.keyCode
-//     if (char > 31 && char != 32 && (char < 65 || char > 90) && (char < 97 || char > 122)) {
-//         if (e.target.parentElement.nextElementSibling) {
-//             e.target.parentElement.nextElementSibling.lastChild.focus() 
-//             e.target.parentElement.nextElementSibling.lastChild.value = " "
-//         }
-//         e.target.value = e.key
-//     }
-    
-//     //  }
-//     // const inputs = tries[trie].querySelectorAll("input")
-//     console.log(e)
-    
-
-//  })
-
-// document.addEventListener("keydown", (e) => {
-//     console.log(e)
-// })
-
-// document.addEventListener("keyup", (e) => {
-//     if (e.keyCode == 8){
-//         e.target.parentElement.previousElementSibling.lastChild.focus()
-//     }
-// })
 
 document.addEventListener("keyup", (e) => {
     if (e.keyCode == 8){
@@ -623,12 +584,6 @@ document.addEventListener("keyup", (e) => {
 })
 
 
-// const endGame = () => {
-//     if (trie = 6){
-//         body.classList.add("defeat")    
-//     }
-// }
-// console.log(trie)
 
 buttonp.addEventListener("click", () => {
     openGame()
